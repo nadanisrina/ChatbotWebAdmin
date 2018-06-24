@@ -300,124 +300,50 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
-                                <h3 class="title-5 m-b-35">data table</h3>
-                                
-                                <div class="table-responsive m-b-40">
-                                    <div class="col-md-12">
-                                        <div class="table-responsive table-responsive-data2">
-                                            <table class="table table-data2">
-                                                <thead>
-                                                    <tr>
-                                                        
-                                                        <th colspan="3">username</th>
-                                                        <th colspan="1"></th>
-                                                    </tr>
-                                                </thead>
-                                                    <?php 
-                                                    include 'koneksi.php';
-                                                    $data = mysqli_query($koneksi,"select * from user");
-                                                    while($d = mysqli_fetch_array($data)){
-                                                        ?>
-                                                <tbody>
-                                                        <tr>
-                                                                            
-                                                            <td colspan="3"><?php echo $d['username']; ?></td>
-                                                            <td colspan="3">
-                                                                <div class="table-data-feature">
-                                                                        <button onclick="window.location.href='editData.php'"" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                            <i class="zmdi zmdi-edit"></i>
-                                                                        </button>
-                                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                            <i class="zmdi zmdi-delete"></i>
-                                                                        </button>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    <tr class="spacer"></tr>
-                                                </tbody>
-                                                <?php 
-                                                    }
-                                                    ?>
-                                            </table>
+                                <h3 class="title-3 m-b-30">
+                                    <i class="zmdi zmdi-account-calendar"></i>user data</h3>
+                                <h2 class="title-3 m-b-30">matkul</h2>
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-left">
+                                        <div class="table-data__tool-right">
+                                            <button type="submit" value="Submit" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                                <i class="zmdi zmdi-plus"></i>add item</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- END DATA TABLE -->
-                            </div>
-                        </div>
-                        <div class="row m-t-30">
-                            <div class="col-md-12">
-                                <!-- DATA TABLE-->
-                                <div class="table-responsive m-b-40">
-                                    <table class="table table-borderless table-data3">
-                                        <thead>
-                                            <tr>
-                                                <th>date</th>
-                                                <th>type</th>
-                                                <th>description</th>
-                                                <th>status</th>
-                                                <th>price</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>Mobile</td>
-                                                <td>iPhone X 64Gb Grey</td>
-                                                <td class="process">Processed</td>
-                                                <td>$999.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>Mobile</td>
-                                                <td>Samsung S8 Black</td>
-                                                <td class="process">Processed</td>
-                                                <td>$756.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-27 02:12</td>
-                                                <td>Game</td>
-                                                <td>Game Console Controller</td>
-                                                <td class="denied">Denied</td>
-                                                <td>$22.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-26 23:06</td>
-                                                <td>Mobile</td>
-                                                <td>iPhone X 256Gb Black</td>
-                                                <td class="denied">Denied</td>
-                                                <td>$1199.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-25 19:03</td>
-                                                <td>Accessories</td>
-                                                <td>USB 3.0 Cable</td>
-                                                <td class="process">Processed</td>
-                                                <td>$10.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>Accesories</td>
-                                                <td>Smartwatch 4.0 LTE Wifi</td>
-                                                <td class="denied">Denied</td>
-                                                <td>$199.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-24 19:10</td>
-                                                <td>Camera</td>
-                                                <td>Camera C430W 4k</td>
-                                                <td class="process">Processed</td>
-                                                <td>$699.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-22 00:43</td>
-                                                <td>Computer</td>
-                                                <td>Macbook Pro Retina 2017</td>
-                                                <td class="process">Processed</td>
-                                                <td>$10.00</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+
+                                <!-- tabel -->
+                                <div class="table-responsive table--no-card m-b-40">
+                                    <form method="post" action="tambah_aksi.php">
+                                        <table class="table table-borderless table-striped table-earning">
+                                            <thead>
+                                                <tr>
+                                                    <th>matkul</th>
+                                                    <th>tanggal jadwal kuliah</th>
+                                                    <th>kelas</th>
+                                                    <th>hari</th>
+                                                    <th class="text-right">options</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><div style="border: 1px solid #aaa;"><input type="text" name="matkul"></div></td>
+                                                    <td><div style="border: 1px solid #aaa;"><input type="text" name="tanggal_jadkul"></div></td>
+                                                    <td class="text-right"><div style="border: 1px solid #aaa;"><input type="text" name="kelas"></div></td>
+                                                    <td class="text-right"><div style="border: 1px solid #aaa;"><input type="text" name="hari"></div></td>
+                                                    <td class="text-right"><div class="table-data-feature">
+                                                        <button onclick="window.location.href='editData.php'"" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                    </div></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </form>
                                 </div>
                                 <!-- END DATA TABLE-->
                             </div>
