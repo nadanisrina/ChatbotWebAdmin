@@ -13,6 +13,6 @@ mysqli_query($koneksi,"insert into matkul values('','$matkul')");
 mysqli_query($koneksi,"insert into jadwal_kuliah values('','','$tanggal_jadkul','$kelas','$hari')");
  
 // mengalihkan halaman kembali ke index.php
-header("location:index.php");
+header("location:index2.php");
  
 ?>
