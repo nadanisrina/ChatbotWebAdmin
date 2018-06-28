@@ -17,7 +17,7 @@ Primary use:	Open Source
         ...
 	+ Footer / footer
 
--------------------------------------------------------------------*/
+    -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
 # [Color codes]
 
@@ -967,7 +967,7 @@ section {
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
- }
+}
 
 .rs-select2--border .select2-container--default .select2-selection--single,
 
@@ -1314,7 +1314,11 @@ section {
     -ms-flex-align: center;
     align-items: center;
 }
-
+.admin-content{
+    display:      block;
+    margin-left:  auto;
+    margin-right: 0;
+}
 .noti-wrap .noti__item:last-child {
     margin-right: 50px;
 }
@@ -1388,31 +1392,50 @@ section {
 }
 
 .account-wrap {
-    position: relative;
+    overflow: auto;
+    
 }
 
 .account-item {
+    position: absolute;
+    float: right;
+    right: 0;
     cursor: pointer;
+
 }
 
 .account-item .image {
+    position: absolute;
+    float: right;
     width: 45px;
     height: 45px;
-    float: left;
+    float: right;
     overflow: hidden;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    
 }
 
 .account-item .image > img {
     width: 100%;
+    float: right;
+    right: 0;
+    position: absolute;
+    float: right;
+
 }
 
 .account-item > .content {
+    position: absolute;
+    right: 0;
+    float: right;
     margin-left: 45px;
     padding: 9px 0;
-    padding-left: 12px;
+    padding-left: 60px;
+    float: right;
+    position: absolute;
+    right: 0;
 }
 
 .account-item > .content > a {
@@ -1467,7 +1490,7 @@ section {
 }
 
 .account-dropdown .info .image {
-    float: left;
+    float: right;
     height: 65px;
     width: 65px;
     overflow: hidden;
@@ -5303,7 +5326,7 @@ section {
 }
 
 .switch.switch-text .switch-label::before,
-  .switch.switch-text .switch-label::after {
+.switch.switch-text .switch-label::after {
     position: absolute;
     top: 50%;
     width: 50%;
@@ -5449,7 +5472,7 @@ section {
 }
 
 .switch.switch-icon .switch-label::before,
-  .switch.switch-icon .switch-label::after {
+.switch.switch-icon .switch-label::after {
     position: absolute;
     top: 50%;
     width: 50%;

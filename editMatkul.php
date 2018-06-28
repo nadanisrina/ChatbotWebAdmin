@@ -314,7 +314,7 @@
                                 <!-- DATA TABLE -->
                                 
                                     
-                                <h2 class="title-3 m-b-30">Tugas</h2>
+                                <h2 class="title-3 m-b-30">Daftar PJ</h2>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="table-data__tool-right">
@@ -331,20 +331,20 @@
                                         <table class="table table-borderless table-striped table-earning">
                                             <thead>
                                                 <tr>
-                                                    <th>tugas</th>
-                                                    <th>tangal tugas</th>
+                                                    <th>daftar matkul</th>
+                                                    
                                                     <th class="text-right">options</th>
                                                 </tr>
                                             </thead>
                                             <?php 
                                                     include 'koneksi.php';
-                                                    $data = mysqli_query($koneksi,"select * from tugas");
+                                                    $data = mysqli_query($koneksi,"select * from matkul");
                                                     while($d = mysqli_fetch_array($data)){
                                                         ?>
                                             <tbody>
                                                 <tr>
-                                                    <td><?php echo $d['tugas']; ?></td>
-                                                    <td><?php echo $d['tanggal_tugas']; ?></td>
+                                                    <td><?php echo $d['matkul']; ?></td>
+                                            
                                                     <td class="text-right"><div class="table-data-feature">
                                                         <button onclick="window.location.href='editData.php'"" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>

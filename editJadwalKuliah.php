@@ -1,3 +1,19 @@
+<?php 
+                                include 'koneksi.php';
+                                $id_jadkul = isset($_GET['id_jadkul']) ? $_GET['id_jadkul']: '';
+                                $id_matkul = isset($_GET['id_matkul']) ? $_GET['id_matkul']: '';
+                                //$id_jadkul = $_GET['id_jadkul'];
+                                //$id_matkul = $_GET['id_matkul'];
+                                $query = "SELECT * FROM jadwal_kuliah where id_jadkul='$id_jadkul'";
+                                $sql = mysql_query($query);
+                                //echo $sql;
+                                //return;
+                                $data = mysql_fetch_array($sql);
+                                $tanggal_jadkul = $data['tanggal_jadkul'];
+                                $kelas = $data['kelas'];
+                                $hari = $data['hari'];
+
+                                ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,7 +123,7 @@
                                 <i class="fas fa-copy"></i>Data User</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="matkul.php">Matkul</a>
+                                    <a href="matkul1.php">Matkul</a>
                                 </li>
                                 <li>
                                     <a href="jadwal_kuliah.php">Jadwal kuliah</a>
@@ -311,10 +327,8 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
-                                <!-- DATA TABLE -->
-                                
-                                    
-                                <h2 class="title-3 m-b-30">Tugas</h2>
+                                <!-- DATA TABLE -->   
+                                <h2 class="title-3 m-b-30">Jadwal Kuliah</h2>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="table-data__tool-right">
@@ -326,39 +340,40 @@
                                 </div>
 
                                 <!-- tabel -->
+                                
                                 <div class="table-responsive table--no-card m-b-40">
-                                    <form method="post" action="tambah_aksi.php">
-                                        <table class="table table-borderless table-striped table-earning">
-                                            <thead>
-                                                <tr>
-                                                    <th>tugas</th>
-                                                    <th>tangal tugas</th>
-                                                    <th class="text-right">options</th>
-                                                </tr>
-                                            </thead>
-                                            <?php 
-                                                    include 'koneksi.php';
-                                                    $data = mysqli_query($koneksi,"select * from tugas");
-                                                    while($d = mysqli_fetch_array($data)){
-                                                        ?>
-                                            <tbody>
-                                                <tr>
-                                                    <td><?php echo $d['tugas']; ?></td>
-                                                    <td><?php echo $d['tanggal_tugas']; ?></td>
-                                                    <td class="text-right"><div class="table-data-feature">
-                                                        <button onclick="window.location.href='editData.php'"" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                    </div></td>  
-                                                </tr>
-                                                <?php 
-                                                    }
-                                                    ?>
-                                            </tbody>
-                                            
-                                        </table>
-                                    </form>
-                                </div>
+                                    <form action="editProsesJadkul.php" method="post">
+                                      <td>
+                                      <input type="hidden" name="id_jadkul" size="50%" value="<?php echo $id_jadkul; ?>">
+                                      <input type="hidden" name="id_matkul" size="50%" value="<?php echo $id_matkul; ?>">
+
+                                      </td>
+                                      <table width="100%" height="80%" align="center" cellspacing="0" cellpadding="5">
+                                        <tbody>
+                                            <tr>
+                                                <td width="25%" align="right">tanggal jadwal kuliah</td>
+                                                <td><input type="text" name="tanggal_jadkul" size="50%" value="<?php echo $tanggal_jadkul; ?>"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="20%" align="right">kelas</td>
+                                                <td><input type="text" name="kelas" size="50%" value="<?php echo $kelas; ?>"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="20%" align="right">Hari</td>
+                                                <td><input type="text" name="hari" size="50%" value="<?php echo $hari; ?>"></td>
+                                            </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" value="Simpan"></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="index.php">Kembali</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </form>
+                                    </div>
                                 <!-- END DATA TABLE-->
                             </div>
                         </div>

@@ -66,7 +66,7 @@
                                 <i class="fas fa-copy"></i>Data User</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="matkul.php">Matkul</a>
+                                    <a href="matkul1.php">Matkul</a>
                                 </li>
                                 <li>
                                     <a href="jadwal_kuliah.php">Jadwal kuliah</a>

@@ -1,3 +1,17 @@
+<!--<?php 
+    if(isset($_GET['pesan'])){
+        $pesan = $_GET['pesan'];
+        if($pesan == "input"){
+            echo "<script> alert('Data berhasil Di tambah') </script>";
+    
+        }else if($pesan == "update"){
+            echo "Data berhasil di update.";
+        }else if($pesan == "hapus"){
+            echo "Data berhasil di hapus.";
+        }
+    }
+    ?>-->
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +80,7 @@
                                 <i class="fas fa-copy"></i>Data User</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="matkul.php">Matkul</a>
+                                    <a href="matkul1.php">Matkul</a>
                                 </li>
                                 <li>
                                     <a href="jadwal_kuliah.php">Jadwal kuliah</a>
@@ -107,7 +121,7 @@
                                 <i class="fas fa-copy"></i>Data User</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="matkul.php">Matkul</a>
+                                    <a href="matkul1.php">Matkul</a>
                                 </li>
                                 <li>
                                     <a href="jadwal_kuliah.php">Jadwal kuliah</a>
@@ -318,7 +332,7 @@
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="table-data__tool-right">
-                                            <button type="submit" value="submit" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                            <button onclick="window.location.href='inputJadwalKuliah.php'" type="submit" value="submit" class="au-btn au-btn-icon au-btn--green au-btn--small">
                                                 <i class="zmdi zmdi-plus"></i>add item</button>
                                             </div>
                                         </div>
@@ -331,6 +345,7 @@
                                         <table class="table table-borderless table-striped table-earning">
                                             <thead>
                                                 <tr>
+                                                    <th>id_jadkul</th>
                                                     <th>tanggal jadwal kuliah</th>
                                                     <th>kelas</th>
                                                     <th>hari</th>
@@ -344,14 +359,16 @@
                                                         ?>
                                             <tbody>
                                                 <tr>
+                                                    <td><?php echo $d['id_jadkul']; ?></td>
                                                     <td><?php echo $d['tanggal_jadkul']; ?></td>
                                                     <td><?php echo $d['kelas']; ?></td>
                                                     <td><?php echo $d['hari']; ?></td>
-                                                    <td class="text-right"><div class="table-data-feature">
+                                                    <<!-- td class="text-right"><div class="table-data-feature">
                                                         <button onclick="window.location.href='editData.php'"" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
-                                                    </div></td>  
+                                                    </div></td>   -->
+                                                    <td><a href="editJadwalKuliah.php?id_jadkul=<?php echo $d['id_jadkul']; ?>">Edit</a></td>
                                                 </tr>
                                                 <?php 
                                                     }
